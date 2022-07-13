@@ -7,7 +7,12 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private Player _player;
 
-    public void UpdateHealthBar()
+    private void Start()
+    {
+        _player.ChangingBar += UpdateHealthBar;
+    }
+
+    private void UpdateHealthBar()
     {
         float target = _player.Health / _player.MaxHealth;
         _image.DOFillAmount(target, _image.fillAmount);

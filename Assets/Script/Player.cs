@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _health;
-    [SerializeField] private HealthBar _healthBar;
 
     private float _maxHealth = 100;
     private float _damage = 10;
     private float _heal = 10;
 
+    public UnityAction ChangingBar;
     public float Health => _health;
     public float MaxHealth => _maxHealth;
 
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
             _health -= _damage;
         }
 
-        _healthBar.UpdateHealthBar();
+        ChangingBar?.Invoke();
     }
 
     public void TakeHeal()
@@ -29,6 +30,6 @@ public class Player : MonoBehaviour
             _health += _heal;
         }
 
-        _healthBar.UpdateHealthBar();
+        ChangingBar?.Invoke();
     }
 }

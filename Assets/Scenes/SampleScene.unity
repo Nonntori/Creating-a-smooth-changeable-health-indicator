@@ -152,9 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44d54a36fc8f064cbfd429449aa802f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  healthBar: {fileID: 0}
+  _health: 100
 --- !u!4 &424583563
 Transform:
   m_ObjectHideFlags: 0
@@ -480,8 +478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9a8f44e1bb5ea409751ef6be297a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarImage: {fileID: 579672533}
-  player: {fileID: 424583562}
+  _image: {fileID: 579672533}
+  _player: {fileID: 424583562}
 --- !u!1 &586344561
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,8 +770,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 424583562}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: TakeDamge
-        m_Mode: 4
+        m_MethodName: TakeDamage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1086,8 +1084,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 424583562}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 4
+        m_MethodName: TakeHeal
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
