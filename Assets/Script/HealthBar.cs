@@ -9,7 +9,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        _player.ChangingBar += UpdateHealthBar;
+        _player.ChangingHealth += UpdateHealthBar;
     }
 
     private void UpdateHealthBar()

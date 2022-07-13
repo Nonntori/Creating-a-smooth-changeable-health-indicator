@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private float _damage = 10;
     private float _heal = 10;
 
-    public UnityAction ChangingBar;
+    public UnityAction ChangingHealth;
     public float Health => _health;
     public float MaxHealth => _maxHealth;
 
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
             _health -= _damage;
         }
 
-        ChangingBar?.Invoke();
+        ChangingHealth?.Invoke();
     }
 
     public void TakeHeal()
@@ -30,6 +30,6 @@ public class Player : MonoBehaviour
             _health += _heal;
         }
 
-        ChangingBar?.Invoke();
+        ChangingHealth?.Invoke();
     }
 }
